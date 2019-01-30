@@ -1,6 +1,9 @@
 package fr.esiea.model;
 
 import fr.esiea.ReceiptPrinter;
+
+import java.util.Objects;
+
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -46,7 +49,7 @@ public class SupermarketTest {
     }
 
     @Test
-    public void testProduct () {
+    public void testProductClass () {
         Product apples = new Product("apples", ProductUnit.Kilo);
         Product raspberry = new Product("raspberry", ProductUnit.Kilo);
 
@@ -54,6 +57,8 @@ public class SupermarketTest {
         Assertions.assertThat(apples.equals(raspberry)).isFalse();
         Assertions.assertThat(apples.equals(apples)).isTrue();
         Assertions.assertThat(apples.equals(null)).isFalse();
+        Assertions.assertThat(apples.getUnit()).isEqualTo(ProductUnit.Kilo);
+        Assertions.assertThat(apples.hashCode()).isEqualTo(Objects.hash("apples",ProductUnit.Kilo));
     }
 
     @Test
