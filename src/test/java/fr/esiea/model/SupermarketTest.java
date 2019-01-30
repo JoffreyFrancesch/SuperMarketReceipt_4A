@@ -73,4 +73,12 @@ public class SupermarketTest {
         Assertions.assertThat(hariboOffer.argument).isEqualTo(7.99);
         Assertions.assertThat(hariboOffer.offerType).isEqualTo(SpecialOfferType.FiveForAmount);
     }
+
+    @Test
+    public void testProductQuantityClass(){
+        Product chikenWings = new Product("Chiken Wings", ProductUnit.Kilo);
+        ProductQuantity chikenQty = new ProductQuantity(chikenWings, 20.500);
+        Assertions.assertThat(chikenQty.getQuantity()).isEqualTo(20.500);
+        Assertions.assertThat(chikenQty.getProduct()).isEqualTo(chikenWings);
+    }
 }
