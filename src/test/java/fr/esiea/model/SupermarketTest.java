@@ -55,4 +55,13 @@ public class SupermarketTest {
         Assertions.assertThat(apples.equals(apples)).isTrue();
         Assertions.assertThat(apples.equals(null)).isFalse();
     }
+
+    @Test
+    public void testDiscountClass(){
+        Product apples = new Product("apples",ProductUnit.Kilo);
+        Discount testDiscount = new Discount(apples, "discount for apples", 2.3);
+        Assertions.assertThat(testDiscount.getDescription()).isEqualTo("discount for apples");
+        Assertions.assertThat(testDiscount.getDiscountAmount()).isEqualTo(2.3);
+        Assertions.assertThat(testDiscount.getProduct()).isEqualTo(apples);
+    }
 }
