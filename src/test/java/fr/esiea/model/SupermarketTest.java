@@ -64,14 +64,4 @@ public class SupermarketTest {
     }
 
 
-
-
-
-    @Test
-    public void testProductQuantityClass(){
-        Product chikenWings = new Product("Chiken Wings", ProductUnit.Kilo);
-        ProductQuantity chikenQty = new ProductQuantity(chikenWings, 20.500);
-        Assertions.assertThat(chikenQty.getQuantity()).isEqualTo(20.500);
-        Assertions.assertThat(chikenQty.getProduct()).isEqualTo(chikenWings);
-    }
 }
