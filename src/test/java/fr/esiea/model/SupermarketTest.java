@@ -44,4 +44,15 @@ public class SupermarketTest {
 
         Assertions.assertThat(new ReceiptPrinter().printReceipt(receipt)).isNotBlank();
     }
+
+    @Test
+    public void testProduct () {
+        Product apples = new Product("apples", ProductUnit.Kilo);
+
+        Assertions.assertThat(apples.getName()).isEqualTo("apples");
+
+        Product raspberry = new Product("raspberry", ProductUnit.Kilo);
+
+        Assertions.assertThat(apples.equals(raspberry)).isFalse();
+    }
 }
