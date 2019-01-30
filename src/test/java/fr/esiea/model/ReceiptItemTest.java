@@ -42,9 +42,40 @@ public class ReceiptItemTest {
         Assertions.assertThat(receiptItem.hashCode()).isEqualTo(Objects.hash(product, 1.50, 15.00, 10.00));
     }
 
-    //Need to be implemented
-    /*@Test
-    public void testEquals(){
 
+    /*public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ReceiptItem that = (ReceiptItem) o;
+        return Double.compare(that.price, price) == 0 &&
+            Double.compare(that.totalPrice, totalPrice) == 0 &&
+            Double.compare(that.quantity, quantity) == 0 &&
+            Objects.equals(product, that.product);
     }*/
+
+    //Need to be implemented
+    @Test
+    public void testEquals(){
+        Product product = new Product("Cacao",ProductUnit.Kilo);
+        Product productB = new Product("Chocolate",ProductUnit.Kilo);
+
+        ReceiptItem receiptItem = new ReceiptItem(product,10.00,1.50, 15.00);
+
+        ReceiptItem receiptItem1 = new ReceiptItem(productB,10.00,1.50, 15.00);
+        ReceiptItem receiptItem2 = new ReceiptItem(product,11.00,1.50, 15.00);
+        ReceiptItem receiptItem3 = new ReceiptItem(product,10.00,2.00, 15.00);
+        ReceiptItem receiptItem4 = new ReceiptItem(product,10.00,1.50, 20.00);
+        ReceiptItem receiptItem_twin = new ReceiptItem(product,10.00,1.50, 15.00);
+
+
+        Assertions.assertThat(receiptItem.equals(receiptItem)).isTrue();
+        Assertions.assertThat(receiptItem.equals(null)).isFalse();
+        Assertions.assertThat(receiptItem.equals(product)).isFalse();
+
+        Assertions.assertThat(receiptItem.equals(receiptItem1)).isFalse();
+        Assertions.assertThat(receiptItem.equals(receiptItem2)).isFalse();
+        Assertions.assertThat(receiptItem.equals(receiptItem3)).isFalse();
+        Assertions.assertThat(receiptItem.equals(receiptItem4)).isFalse();
+        Assertions.assertThat(receiptItem.equals(receiptItem_twin)).isTrue();
+    }
 }
