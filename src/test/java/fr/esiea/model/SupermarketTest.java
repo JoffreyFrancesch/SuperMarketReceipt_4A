@@ -48,20 +48,5 @@ public class SupermarketTest {
         Assertions.assertThat(new ReceiptPrinter().printReceipt(receipt)).isNotBlank();
     }
 
-    @Test
-    public void testProductClass () {
-        Product apples = new Product("apples", ProductUnit.Kilo);
-        Product raspberry = new Product("raspberry", ProductUnit.Kilo);
-
-        Assertions.assertThat(apples.getName()).isEqualTo("apples");
-        Assertions.assertThat(apples.equals(apples)).isTrue();
-        Assertions.assertThat(apples.equals(null)).isFalse();
-        Assertions.assertThat(apples.equals(raspberry)).isFalse();
-        
-        
-        Assertions.assertThat(apples.getUnit()).isEqualTo(ProductUnit.Kilo);
-        Assertions.assertThat(apples.hashCode()).isEqualTo(Objects.hash("apples",ProductUnit.Kilo));
-    }
-
 
 }
