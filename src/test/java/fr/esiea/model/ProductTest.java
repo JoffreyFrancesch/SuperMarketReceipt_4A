@@ -13,12 +13,19 @@ public class ProductTest {
 
         Discount discount = new Discount(apples,"fake description",1.00);
         Product raspberry = new Product("raspberry", ProductUnit.Kilo);
+        Product apples_twin = new Product("apples", ProductUnit.Kilo);
+        Product apples_each = new Product("apples", ProductUnit.Each);
+
 
         Assertions.assertThat(apples.equals(apples)).isTrue();
         Assertions.assertThat(apples.equals(null)).isFalse();
         Assertions.assertThat(apples.equals(discount)).isFalse();
         // A Revoir la couverture n'est toujours pas a 100%
-        Assertions.assertThat(apples.equals(raspberry)).isEqualTo(Objects.equals("apples","raspberry") && ProductUnit.Kilo == ProductUnit.Kilo);
+        //Assertions.assertThat(apples.equals(raspberry)).isEqualTo(Objects.equals(apples.getName(),raspberry.getName()) && apples.getUnit() == raspberry.getUnit()).isFalse();
+        //Assertions.assertThat(apples.equals(raspberry)).isEqualTo(Objects.equals(apples.getName(),apples_twin.getName()) && apples.getUnit() == apples_twin.getUnit()).isTrue();
+        Assertions.assertThat(apples.equals(raspberry)).isFalse();
+        Assertions.assertThat(apples.equals(apples_twin)).isTrue();
+        Assertions.assertThat(apples.equals(apples_each)).isFalse();
 
     }
 
