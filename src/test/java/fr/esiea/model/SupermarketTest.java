@@ -48,11 +48,11 @@ public class SupermarketTest {
     @Test
     public void testProduct () {
         Product apples = new Product("apples", ProductUnit.Kilo);
-
-        Assertions.assertThat(apples.getName()).isEqualTo("apples");
-
         Product raspberry = new Product("raspberry", ProductUnit.Kilo);
 
+        Assertions.assertThat(apples.getName()).isEqualTo("apples");
         Assertions.assertThat(apples.equals(raspberry)).isFalse();
+        Assertions.assertThat(apples.equals(apples)).isTrue();
+        Assertions.assertThat(apples.equals(null)).isFalse();
     }
 }
