@@ -13,11 +13,12 @@ public class ProductTest {
 
         Discount discount = new Discount(apples,"fake description",1.00);
         Product raspberry = new Product("raspberry", ProductUnit.Kilo);
-        
+
         Assertions.assertThat(apples.equals(apples)).isTrue();
         Assertions.assertThat(apples.equals(null)).isFalse();
         Assertions.assertThat(apples.equals(discount)).isFalse();
-        Assertions.assertThat(apples.equals(raspberry)).isEqualTo(Objects.equals(apples.getName(),raspberry.getName())&& apples.getUnit() == raspberry.getUnit());
+        // A Revoir la couverture n'est toujours pas a 100%
+        Assertions.assertThat(apples.equals(raspberry)).isEqualTo(Objects.equals(apples.getName(),raspberry.getName()) && apples.getUnit() == raspberry.getUnit());
 
     }
 
