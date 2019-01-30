@@ -40,6 +40,7 @@ public class SupermarketTest {
         teller.addSpecialOffer(SpecialOfferType.TenPercentDiscount, toothbrush, 10.0);
 
         Receipt receipt = teller.checksOutArticlesFrom(cart);
+        receipt.addDiscount(new Discount(apples, "Reduction pomme", 0.3));
 
         Assertions.assertThat(new ReceiptPrinter().printReceipt(receipt)).isNotBlank();
     }
