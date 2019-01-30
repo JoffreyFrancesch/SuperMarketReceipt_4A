@@ -14,5 +14,4 @@ public class Offer {
     Product getProduct() {
         return this.product;
     }
-
 }
