@@ -18,7 +18,7 @@ public class ProductTest {
         Assertions.assertThat(apples.equals(null)).isFalse();
         Assertions.assertThat(apples.equals(discount)).isFalse();
         // A Revoir la couverture n'est toujours pas a 100%
-        Assertions.assertThat(apples.equals(raspberry)).isEqualTo(Objects.equals(apples.getName(),raspberry.getName()) && apples.getUnit() == raspberry.getUnit());
+        Assertions.assertThat(apples.equals(raspberry)).isEqualTo(Objects.equals("apples","raspberry") && ProductUnit.Kilo == ProductUnit.Kilo);
 
     }
 
