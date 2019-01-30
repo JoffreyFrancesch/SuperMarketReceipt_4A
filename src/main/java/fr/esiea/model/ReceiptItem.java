@@ -44,7 +44,6 @@ public class ReceiptItem {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(product, price, totalPrice, quantity);
     }
 
