@@ -54,21 +54,16 @@ public class SupermarketTest {
         Product raspberry = new Product("raspberry", ProductUnit.Kilo);
 
         Assertions.assertThat(apples.getName()).isEqualTo("apples");
-        Assertions.assertThat(apples.equals(raspberry)).isFalse();
         Assertions.assertThat(apples.equals(apples)).isTrue();
         Assertions.assertThat(apples.equals(null)).isFalse();
+        Assertions.assertThat(apples.equals(raspberry)).isFalse();
+        
+        
         Assertions.assertThat(apples.getUnit()).isEqualTo(ProductUnit.Kilo);
         Assertions.assertThat(apples.hashCode()).isEqualTo(Objects.hash("apples",ProductUnit.Kilo));
     }
 
-    @Test
-    public void testDiscountClass(){
-        Product apples = new Product("apples",ProductUnit.Kilo);
-        Discount testDiscount = new Discount(apples, "discount for apples", 2.3);
-        Assertions.assertThat(testDiscount.getDescription()).isEqualTo("discount for apples");
-        Assertions.assertThat(testDiscount.getDiscountAmount()).isEqualTo(2.3);
-        Assertions.assertThat(testDiscount.getProduct()).isEqualTo(apples);
-    }
+
 
     @Test
     public void testOfferClass(){
