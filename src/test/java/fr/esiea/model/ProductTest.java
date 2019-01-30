@@ -12,6 +12,7 @@ public class ProductTest {
         Product apples = new Product("apples", ProductUnit.Kilo);
         Product raspberry = new Product("raspberry", ProductUnit.Kilo);
 
+        //A REVOIR CAR TOUT LES CAS NE SONT PAS PASSER ;)
         Assertions.assertThat(apples.equals(apples)).isTrue();
         Assertions.assertThat(apples.equals(null)).isFalse();
         Assertions.assertThat(apples.equals(raspberry)).isFalse();
