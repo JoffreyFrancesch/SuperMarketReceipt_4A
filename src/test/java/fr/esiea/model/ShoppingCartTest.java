@@ -67,17 +67,17 @@ public class ShoppingCartTest {
         Product wine = new Product("wine", ProductUnit.Kilo);
         catalog.addProduct(wine, 10.00);
 
-        cart.addItemQuantity(wine,2);
+        cart.addItemQuantity(wine,1);
         Teller teller = new Teller(catalog);
         teller.addSpecialOffer(SpecialOfferType.TwoForAmount,wine,15.00);
 
         Receipt receipt = teller.checksOutArticlesFrom(cart);
-        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(15.00);
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(10.00);
 
-        cart.addItemQuantity(wine,2);
+        cart.addItemQuantity(wine,1);
         receipt = teller.checksOutArticlesFrom(cart);
 
-        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(30.00);
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(15.00);
     }
 
     @Test
