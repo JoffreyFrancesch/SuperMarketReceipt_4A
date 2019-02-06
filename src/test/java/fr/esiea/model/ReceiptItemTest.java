@@ -42,18 +42,6 @@ public class ReceiptItemTest {
         Assertions.assertThat(receiptItem.hashCode()).isEqualTo(Objects.hash(product, 1.50, 15.00, 10.00));
     }
 
-
-    /*public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ReceiptItem that = (ReceiptItem) o;
-        return Double.compare(that.price, price) == 0 &&
-            Double.compare(that.totalPrice, totalPrice) == 0 &&
-            Double.compare(that.quantity, quantity) == 0 &&
-            Objects.equals(product, that.product);
-    }*/
-
-    //Need to be implemented
     @Test
     public void testEquals(){
         Product product = new Product("Cacao",ProductUnit.Kilo);

@@ -11,7 +11,7 @@ public class ShoppingCartTest {
         SupermarketCatalog catalog = new FakeCatalog();
         ShoppingCart cart = new ShoppingCart();
 
-        Product wine = new Product("wine", ProductUnit.Kilo);
+        Product wine = new Product("wine", ProductUnit.Each);
         catalog.addProduct(wine,10.00);
 
         cart.addItem(wine);
@@ -31,7 +31,7 @@ public class ShoppingCartTest {
         SupermarketCatalog catalog = new FakeCatalog();
         ShoppingCart cart = new ShoppingCart();
 
-        Product wine = new Product("wine", ProductUnit.Kilo);
+        Product wine = new Product("wine", ProductUnit.Each);
         catalog.addProduct(wine, 10.00);
 
         cart.addItemQuantity(wine,2);
@@ -54,7 +54,7 @@ public class ShoppingCartTest {
         SupermarketCatalog catalog = new FakeCatalog();
         ShoppingCart cart = new ShoppingCart();
 
-        Product wine = new Product("wine", ProductUnit.Kilo);
+        Product wine = new Product("wine", ProductUnit.Each);
         catalog.addProduct(wine, 10.00);
 
         cart.addItemQuantity(wine,1);
@@ -70,7 +70,7 @@ public class ShoppingCartTest {
         SupermarketCatalog catalog = new FakeCatalog();
         ShoppingCart cart = new ShoppingCart();
 
-        Product wine = new Product("wine", ProductUnit.Kilo);
+        Product wine = new Product("wine", ProductUnit.Each);
         catalog.addProduct(wine, 10.00);
 
         cart.addItemQuantity(wine,1);
@@ -91,7 +91,7 @@ public class ShoppingCartTest {
         SupermarketCatalog catalog = new FakeCatalog();
         ShoppingCart cart = new ShoppingCart();
 
-        Product wine = new Product("wine", ProductUnit.Kilo);
+        Product wine = new Product("wine", ProductUnit.Each);
         catalog.addProduct(wine, 10.00);
 
         Teller teller = new Teller(catalog);
