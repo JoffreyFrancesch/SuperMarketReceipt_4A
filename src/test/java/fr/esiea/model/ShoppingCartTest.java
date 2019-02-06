@@ -41,11 +41,6 @@ public class ShoppingCartTest {
         Receipt receipt = teller.checksOutArticlesFrom(cart);
 
         Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(20.00);
-
-        cart.addItemQuantity(wine,3);
-        receipt = teller.checksOutArticlesFrom(cart);
-
-        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(40.00);
     }
 
     @Test
