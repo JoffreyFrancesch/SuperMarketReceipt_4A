@@ -94,16 +94,22 @@ public class ShoppingCartTest {
         Product wine = new Product("wine", ProductUnit.Kilo);
         catalog.addProduct(wine, 10.00);
 
-        cart.addItemQuantity(wine,5);
         Teller teller = new Teller(catalog);
         teller.addSpecialOffer(SpecialOfferType.FiveForAmount,wine,30.00);
 
-        Receipt receipt = teller.checksOutArticlesFrom(cart);
-        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(30.00);
+
 
         cart.addItemQuantity(wine,1);
+
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
+
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(10.00);
+
+        cart.addItemQuantity(wine,4);
         receipt = teller.checksOutArticlesFrom(cart);
-        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(40.00);
+
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(30.00);
+
     }
 
 
