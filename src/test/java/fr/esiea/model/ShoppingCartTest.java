@@ -42,10 +42,10 @@ public class ShoppingCartTest {
 
         Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(20.00);
 
-        cart.addItem(wine);
+        cart.addItemQuantity(wine,3);
         receipt = teller.checksOutArticlesFrom(cart);
 
-        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(30.00);
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(40.00);
     }
 
     @Test
