@@ -73,6 +73,11 @@ public class ShoppingCartTest {
 
         Receipt receipt = teller.checksOutArticlesFrom(cart);
         Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(15.00);
+
+        cart.addItemQuantity(wine,2);
+        receipt = teller.checksOutArticlesFrom(cart);
+
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(30.00);
     }
 
     @Test
