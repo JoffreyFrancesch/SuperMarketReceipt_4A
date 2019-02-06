@@ -26,6 +26,73 @@ public class ShoppingCartTest {
         Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(30.00);
     }
 
+    @Test
+    public void ThreeForTwo(){
+        SupermarketCatalog catalog = new FakeCatalog();
+        ShoppingCart cart = new ShoppingCart();
+
+        Product wine = new Product("wine", ProductUnit.Kilo);
+        catalog.addProduct(wine, 10.00);
+
+        cart.addItemQuantity(wine,3);
+        Teller teller = new Teller(catalog);
+        teller.addSpecialOffer(SpecialOfferType.ThreeForTwo,wine,2.00);
+
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
+
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(20.00);
+    }
+
+    @Test
+    public void TenPercentDiscount(){
+        SupermarketCatalog catalog = new FakeCatalog();
+        ShoppingCart cart = new ShoppingCart();
+
+        Product wine = new Product("wine", ProductUnit.Kilo);
+        catalog.addProduct(wine, 10.00);
+
+        cart.addItemQuantity(wine,1);
+        Teller teller = new Teller(catalog);
+        teller.addSpecialOffer(SpecialOfferType.TenPercentDiscount,wine,10.00);
+
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(9.00);
+    }
+
+    @Test
+    public void TwoForAmount(){
+        SupermarketCatalog catalog = new FakeCatalog();
+        ShoppingCart cart = new ShoppingCart();
+
+        Product wine = new Product("wine", ProductUnit.Kilo);
+        catalog.addProduct(wine, 10.00);
+
+        cart.addItemQuantity(wine,2);
+        Teller teller = new Teller(catalog);
+        teller.addSpecialOffer(SpecialOfferType.TwoForAmount,wine,15.00);
+
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(15.00);
+    }
+
+    @Test
+    public void FiveForAmount(){
+        SupermarketCatalog catalog = new FakeCatalog();
+        ShoppingCart cart = new ShoppingCart();
+
+        Product wine = new Product("wine", ProductUnit.Kilo);
+        catalog.addProduct(wine, 10.00);
+
+        cart.addItemQuantity(wine,5);
+        Teller teller = new Teller(catalog);
+        teller.addSpecialOffer(SpecialOfferType.FiveForAmount,wine,30.00);
+
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(30.00);
+    }
+
+
+
 
 
 
