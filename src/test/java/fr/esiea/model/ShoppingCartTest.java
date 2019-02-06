@@ -98,7 +98,6 @@ public class ShoppingCartTest {
         teller.addSpecialOffer(SpecialOfferType.FiveForAmount,wine,30.00);
 
 
-
         cart.addItemQuantity(wine,1);
 
         Receipt receipt = teller.checksOutArticlesFrom(cart);
@@ -109,6 +108,11 @@ public class ShoppingCartTest {
         receipt = teller.checksOutArticlesFrom(cart);
 
         Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(30.00);
+
+        cart.addItemQuantity(wine,1);
+        receipt = teller.checksOutArticlesFrom(cart);
+
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(40.00);
 
     }
 
