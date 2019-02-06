@@ -10,15 +10,20 @@ public class ReceiptPrinterTest {
         SupermarketCatalog catalog = new FakeCatalog();
         ShoppingCart cart = new ShoppingCart();
 
-        Product wine = new Product("wine", ProductUnit.Kilo);
-        Product beer = new Product("beer",ProductUnit.Kilo);
+        Product wine = new Product("wine", ProductUnit.Each);
+        Product beer = new Product("beer",ProductUnit.Each);
+        Product apple = new Product("Apple",ProductUnit.Kilo);
+
         catalog.addProduct(wine, 10.00);
         catalog.addProduct(beer, 5.00);
+        catalog.addProduct(apple, 0.50);
 
 
         Teller teller = new Teller(catalog);
         cart.addItemQuantity(wine,1);
         cart.addItemQuantity(beer,2);
+        cart.addItemQuantity(apple,5);
+
 
 
         Receipt receipt = teller.checksOutArticlesFrom(cart);
