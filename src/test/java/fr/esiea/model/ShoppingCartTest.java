@@ -34,13 +34,19 @@ public class ShoppingCartTest {
         Product wine = new Product("wine", ProductUnit.Kilo);
         catalog.addProduct(wine, 10.00);
 
-        cart.addItemQuantity(wine,3);
+        cart.addItemQuantity(wine,2);
         Teller teller = new Teller(catalog);
         teller.addSpecialOffer(SpecialOfferType.ThreeForTwo,wine,2.00);
 
         Receipt receipt = teller.checksOutArticlesFrom(cart);
 
         Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(20.00);
+
+        cart.addItemQuantity(wine,1);
+        receipt = teller.checksOutArticlesFrom(cart);
+
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(20.00);
+
     }
 
     @Test
@@ -94,6 +100,10 @@ public class ShoppingCartTest {
 
         Receipt receipt = teller.checksOutArticlesFrom(cart);
         Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(30.00);
+
+        cart.addItemQuantity(wine,1);
+        receipt = teller.checksOutArticlesFrom(cart);
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(40.00);
     }
 
 
