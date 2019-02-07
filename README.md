@@ -7,14 +7,18 @@
 
 [![codecov](https://codecov.io/gh/JoffreyFrancesch/SuperMarketReceipt_4A/branch/master/graph/badge.svg)](https://codecov.io/gh/JoffreyFrancesch/SuperMarketReceipt_4A)
 
-## Membres du groupe
+## Sujet :
+
+Le sujet du projet ce trouve [ici](https://github.com/ledoyen/tp-java/tree/master/projet/4A_2019)
+
+## Membres du groupe :
 * Joffrey Franceschini
 * François Delville
 * William Choukroun
 * Mehdi Soltana
 * Kevin Berdah
 
-## Etat d'avancement du projet 
+## Etat d'avancement du projet :
 
 * [x] TP1 100%
 * [x] TP2 100%
