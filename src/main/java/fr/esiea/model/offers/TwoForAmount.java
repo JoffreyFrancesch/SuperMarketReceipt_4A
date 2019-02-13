@@ -26,10 +26,23 @@ public class TwoForAmount implements Offer {
     public Discount getDiscount() {
         return discount;
     }
-
-    //TODO
+    
     @Override
     public Map<Product, Double> makeDiscount(Map<Product, Double> productQuantities, SupermarketCatalog catalog) {
-        return null;
+        double quantity = productQuantities.get(product);
+        double unitPrice = catalog.getUnitPrice(product);
+        int quantityAsInt = (int) quantity;
+
+        int numberOfXs = quantityAsInt / 2;
+
+        if(quantityAsInt > 2){
+            double total = argument * numberOfXs + quantityAsInt % 2 * unitPrice;
+            double discountN = unitPrice * quantity - total;
+            discount = new Discount(product, "2 for " + argument, discountN);
+        }
+
+        productQuantities.put(product,(double)quantityAsInt % 2);
+
+        return productQuantities;
     }
 }
