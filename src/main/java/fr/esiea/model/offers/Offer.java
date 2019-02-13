@@ -12,7 +12,7 @@ public interface Offer {
 
     Discount getDiscount();
 
-    Map<Product,Discount> makeDiscount(Map<Product,Discount> items, SupermarketCatalog catalog);
+    Map<Product,Double> makeDiscount(Map<Product,Double> productQuantities, SupermarketCatalog catalog);
 
 }
 
