@@ -33,6 +33,7 @@ public class ShoppingCart {
         }
     }
 
+    //REFACTORING A FAIRE ICI
     void handleOffers(Receipt receipt, Map<Product, Offer> offers, SupermarketCatalog catalog) {
         for (Product p: productQuantities().keySet()) {
             double quantity = productQuantities.get(p);
