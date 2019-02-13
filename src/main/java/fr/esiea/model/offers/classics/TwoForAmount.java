@@ -1,4 +1,4 @@
-package fr.esiea.model.offers;
+package fr.esiea.model.offers.classics;
 
 import fr.esiea.model.Discount;
 import fr.esiea.model.product.Product;
