@@ -37,6 +37,8 @@ public class ThreeForTwo implements Offer {
 
         int x = base_quantity_int / 3;
 
+
+
         if (base_quantity_int > 2) {
             double discountAmount = base_quantity * base_unitPrice - ((x * 2 * base_unitPrice) + base_quantity_int % 3 * base_unitPrice);
             discount = new Discount(product, "3 for 2", discountAmount);
