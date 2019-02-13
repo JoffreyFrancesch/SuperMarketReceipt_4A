@@ -1,7 +1,7 @@
 package fr.esiea.model.offers.bundles;
 
-import fr.esiea.model.catalog.SupermarketCatalog;
-import fr.esiea.model.product.Product;
+import fr.esiea.model.market.catalog.SupermarketCatalog;
+import fr.esiea.model.market.product.Product;
 
 import java.util.Map;
 import java.util.function.BiFunction;

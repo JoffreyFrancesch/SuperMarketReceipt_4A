@@ -1,6 +1,6 @@
-package fr.esiea.model;
+package fr.esiea.model.market;
 
-import fr.esiea.model.product.Product;
+import fr.esiea.model.market.product.Product;
 
 public class Discount {
     private final String description;

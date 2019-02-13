@@ -3,7 +3,8 @@
 package fr.esiea;
 
 import fr.esiea.model.*;
-import fr.esiea.model.product.ProductUnit;
+import fr.esiea.model.market.Discount;
+import fr.esiea.model.market.product.ProductUnit;
 
 import java.util.Locale;
 

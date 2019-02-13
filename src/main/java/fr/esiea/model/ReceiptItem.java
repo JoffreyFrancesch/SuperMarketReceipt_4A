@@ -1,6 +1,6 @@
 package fr.esiea.model;
 
-import fr.esiea.model.product.Product;
+import fr.esiea.model.market.product.Product;
 
 import java.util.Objects;
 

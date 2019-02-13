@@ -1,8 +1,8 @@
 package fr.esiea.model;
 
-import fr.esiea.model.product.Product;
-import fr.esiea.model.product.ProductQuantity;
-import fr.esiea.model.product.ProductUnit;
+import fr.esiea.model.market.product.Product;
+import fr.esiea.model.market.product.ProductQuantity;
+import fr.esiea.model.market.product.ProductUnit;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 

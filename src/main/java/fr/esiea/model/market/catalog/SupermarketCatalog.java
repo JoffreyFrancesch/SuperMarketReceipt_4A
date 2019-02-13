@@ -1,6 +1,6 @@
-package fr.esiea.model.catalog;
+package fr.esiea.model.market.catalog;
 
-import fr.esiea.model.product.Product;
+import fr.esiea.model.market.product.Product;
 
 import java.util.Map;
 

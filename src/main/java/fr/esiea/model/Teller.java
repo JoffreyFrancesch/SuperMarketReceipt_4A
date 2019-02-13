@@ -1,8 +1,8 @@
 package fr.esiea.model;
 
-import fr.esiea.model.catalog.SupermarketCatalog;
-import fr.esiea.model.product.Product;
-import fr.esiea.model.product.ProductQuantity;
+import fr.esiea.model.market.catalog.SupermarketCatalog;
+import fr.esiea.model.market.product.Product;
+import fr.esiea.model.market.product.ProductQuantity;
 
 import java.util.HashMap;
 import java.util.List;

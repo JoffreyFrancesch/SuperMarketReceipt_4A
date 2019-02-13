@@ -1,8 +1,8 @@
 package fr.esiea.model.offers.classics;
 
-import fr.esiea.model.Discount;
-import fr.esiea.model.product.Product;
-import fr.esiea.model.catalog.SupermarketCatalog;
+import fr.esiea.model.market.Discount;
+import fr.esiea.model.market.product.Product;
+import fr.esiea.model.market.catalog.SupermarketCatalog;
 import fr.esiea.model.offers.Offer;
 
 import java.util.Map;
