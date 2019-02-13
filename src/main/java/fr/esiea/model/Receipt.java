@@ -1,5 +1,7 @@
 package fr.esiea.model;
 
+import fr.esiea.model.product.Product;
+
 import java.util.ArrayList;
 import java.util.List;
 

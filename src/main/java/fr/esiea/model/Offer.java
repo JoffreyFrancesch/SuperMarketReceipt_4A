@@ -1,5 +1,7 @@
 package fr.esiea.model;
 
+import fr.esiea.model.product.Product;
+
 public class Offer {
     SpecialOfferType offerType;
     private final Product product;

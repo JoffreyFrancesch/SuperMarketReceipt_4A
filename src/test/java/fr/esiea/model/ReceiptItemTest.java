@@ -1,5 +1,7 @@
 package fr.esiea.model;
 
+import fr.esiea.model.product.Product;
+import fr.esiea.model.product.ProductUnit;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +11,7 @@ public class ReceiptItemTest {
 
     @Test
     public void testGetPrice() {
-        Product product = new Product("Banana",ProductUnit.Kilo);
+        Product product = new Product("Banana", ProductUnit.Kilo);
         ReceiptItem receiptItem = new ReceiptItem(product,10.00,1.50, 15.00);
         Assertions.assertThat(receiptItem.getPrice()).isEqualTo(1.50);
     }

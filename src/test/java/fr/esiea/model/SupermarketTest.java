@@ -2,8 +2,9 @@ package fr.esiea.model;
 
 import fr.esiea.ReceiptPrinter;
 
-import java.util.Objects;
-
+import fr.esiea.model.catalog.SupermarketCatalog;
+import fr.esiea.model.product.Product;
+import fr.esiea.model.product.ProductUnit;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 

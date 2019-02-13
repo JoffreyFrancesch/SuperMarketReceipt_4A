@@ -3,6 +3,7 @@
 package fr.esiea;
 
 import fr.esiea.model.*;
+import fr.esiea.model.product.ProductUnit;
 
 import java.util.Locale;
 

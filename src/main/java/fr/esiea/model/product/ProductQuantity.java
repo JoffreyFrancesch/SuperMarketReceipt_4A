@@ -1,4 +1,4 @@
-package fr.esiea.model;
+package fr.esiea.model.product;
 
 public class ProductQuantity {
     private final Product product;

@@ -1,4 +1,7 @@
-package fr.esiea.model;
+package fr.esiea.model.catalog;
+
+import fr.esiea.model.product.Product;
+import fr.esiea.model.product.ProductUnit;
 
 import java.util.HashMap;
 import java.util.Map;
