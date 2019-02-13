@@ -119,6 +119,38 @@ public class ShoppingCartTest {
 
     }
 
+    @Test
+    public void ThreeForTwoRefactoring(){
+        //TODO NEED TO BE IMPLEMENTED
+    }
+
+    @Test
+    public void TenPercentRefactoring(){
+        //TODO NEED TO BE IMPLEMENTED
+    }
+
+    @Test
+    public void TwoForAmountRefactoring(){
+        //TODO NEED TO BE IMPLEMENTED
+    }
+
+    @Test
+    public void FifForAmountRefactoring(){
+        //TODO NEED TO BE IMPLEMENTED
+    }
+
+    @Test
+    public void PercentBundleRefactoring(){
+        //TODO NEED TO BE IMPLEMENTED
+    }
+
+    @Test
+    public void AmountBundleRefactoring(){
+        //TODO NEED TO BE IMPLEMENTED
+    }
+
+
+
 
 
 
