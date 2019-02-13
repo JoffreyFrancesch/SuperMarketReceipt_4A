@@ -18,7 +18,7 @@ Le sujet du projet ce trouve [ici](https://github.com/ledoyen/tp-java/tree/maste
 
 * [x] TP1 100%
 * [x] TP2 100%
-* [ ] TP3 0%
+* [ ] TP3 25%
 * [ ] TP4 (optionel) 0%
 
 
