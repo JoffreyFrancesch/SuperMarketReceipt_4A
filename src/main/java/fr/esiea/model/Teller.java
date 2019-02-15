@@ -3,6 +3,7 @@ package fr.esiea.model;
 import fr.esiea.model.market.catalog.SupermarketCatalog;
 import fr.esiea.model.market.product.Product;
 import fr.esiea.model.market.product.ProductQuantity;
+import fr.esiea.model.offers.Offer;
 
 import java.util.HashMap;
 import java.util.List;
@@ -11,14 +12,14 @@ import java.util.Map;
 public class Teller {
 
     private final SupermarketCatalog catalog;
-    private Map<Product, Offer> offers = new HashMap<>();
+    private Map<Product[], Offer> offers = new HashMap<Product[],Offer>();
 
     public Teller(SupermarketCatalog catalog) {
         this.catalog = catalog;
     }
 
-    public void addSpecialOffer(SpecialOfferType offerType, Product product, double argument) {
-        this.offers.put(product, new Offer(offerType, product, argument));
+    public void addSpecialOffer(Offer offer) {
+        this.offers.put(offer.getProducts(), offer);
     }
 
     public Receipt checksOutArticlesFrom(ShoppingCart theCart) {
