@@ -4,6 +4,7 @@ import fr.esiea.model.market.Discount;
 import fr.esiea.model.market.catalog.SupermarketCatalog;
 import fr.esiea.model.market.product.Product;
 import fr.esiea.model.market.product.ProductQuantity;
+import fr.esiea.model.offers.Offer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,10 +38,31 @@ public class ShoppingCart {
             productQuantities.put(product, quantity);
         }
     }
+    
+    void handleOffers(Receipt receipt, Map<Product[], Offer> offers, SupermarketCatalog catalog) {
 
-    //REFACTORING A FAIRE ICI
-    void handleOffers(Receipt receipt, Map<Product, Offer> offers, SupermarketCatalog catalog) {
-        for (Product p: productQuantities().keySet()) {
+        Map<Product,Double> products = productQuantities();
+
+        for (Map.Entry<Product[],Offer> offer : offers.entrySet()){
+            for (Product p : offer.getKey()){
+                if(!products.containsKey(p)){
+                    continue;
+                }
+            }
+
+            products = offer.getValue().makeDiscount(products,catalog);
+
+            Discount discount = offer.getValue().getDiscount();
+
+            if (discount != null) {
+                receipt.addDiscount(discount);
+            }
+        }
+
+
+
+
+        /*for (Product p: productQuantities().keySet()) {
             double quantity = productQuantities.get(p);
             if (offers.containsKey(p)) {
                 Offer offer = offers.get(p);
@@ -78,6 +100,6 @@ public class ShoppingCart {
                     receipt.addDiscount(discount);
             }
 
-        }
+        }*/
     }
 }
