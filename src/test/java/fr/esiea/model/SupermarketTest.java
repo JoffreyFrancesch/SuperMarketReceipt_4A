@@ -23,7 +23,7 @@ public class SupermarketTest {
         cart.addItemQuantity(apples, 2.5);
 
         Teller teller = new Teller(catalog);
-        teller.addSpecialOffer(SpecialOfferType.TenPercentDiscount, toothbrush, 10.0);
+        //teller.addSpecialOffer(SpecialOfferType.TenPercentDiscount, toothbrush, 10.0);
 
         Receipt receipt = teller.checksOutArticlesFrom(cart);
 
@@ -42,7 +42,7 @@ public class SupermarketTest {
         cart.addItemQuantity(apples, 2.5);
 
         Teller teller = new Teller(catalog);
-        teller.addSpecialOffer(SpecialOfferType.TenPercentDiscount, toothbrush, 10.0);
+        //teller.addSpecialOffer(SpecialOfferType.TenPercentDiscount, toothbrush, 10.0);
 
         Receipt receipt = teller.checksOutArticlesFrom(cart);
         receipt.addDiscount(new Discount(apples, "Reduction pomme", 0.3));
