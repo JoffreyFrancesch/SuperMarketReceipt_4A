@@ -36,7 +36,7 @@ public class TwoForAmount implements Offer {
 
         int numberOfXs = quantityAsInt / 2;
 
-        if(quantityAsInt > 2){
+        if(quantityAsInt >= 2){
             double total = argument * numberOfXs + quantityAsInt % 2 * unitPrice;
             double discountN = unitPrice * quantity - total;
             discount = new Discount(product, "2 for " + argument, discountN);
