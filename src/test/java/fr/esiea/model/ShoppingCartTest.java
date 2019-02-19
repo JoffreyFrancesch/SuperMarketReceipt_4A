@@ -159,10 +159,35 @@ public class ShoppingCartTest {
     }
 
     @Test
+    public void PercentBundleRefactoringV2(){
+        Product mayo = new Product("mayo", ProductUnit.Each);
+        Product ketchup = new Product("ketchup", ProductUnit.Each);
+
+        SupermarketCatalog catalog = new FakeCatalog();
+        Teller teller = new Teller(catalog);
+        ShoppingCart cart = new ShoppingCart();
+
+        catalog.addProduct(ketchup, 1);
+        catalog.addProduct(mayo, 1);
+
+        Map<Product,Integer> products = new HashMap<Product,Integer>();
+        products.put(ketchup,2);
+        products.put(mayo,1);
+
+        teller.addSpecialOffer(new PercentBundle(products,50));
+
+        cart.addItemQuantity(ketchup, 1);
+        cart.addItemQuantity(mayo,1);
+
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
+
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(2);
+    }
+
+    @Test
     public void AmountBundleRefactoring(){
         Product brown_beer = new Product("brown beer", ProductUnit.Each);
         Product blond_beer = new Product("blond beer", ProductUnit.Each);
-
 
         SupermarketCatalog catalog = new FakeCatalog();
         Teller teller = new Teller(catalog);
@@ -183,16 +208,32 @@ public class ShoppingCartTest {
         Receipt receipt = teller.checksOutArticlesFrom(cart);
 
         Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(15);
-
     }
 
+    @Test
+    public void AmountBundleRefactoringV2(){
+        Product brown_beer = new Product("brown beer", ProductUnit.Each);
+        Product blond_beer = new Product("blond beer", ProductUnit.Each);
 
+        SupermarketCatalog catalog = new FakeCatalog();
+        Teller teller = new Teller(catalog);
+        ShoppingCart cart = new ShoppingCart();
 
+        catalog.addProduct(brown_beer, 10);
+        catalog.addProduct(blond_beer, 10);
 
+        Map<Product,Integer> products = new HashMap<Product,Integer>();
+        products.put(brown_beer,2);
+        products.put(blond_beer,1);
 
+        teller.addSpecialOffer(new AmountBundle(products,15));
 
+        cart.addItem(brown_beer);
+        cart.addItem(blond_beer);
 
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
 
-
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(20);
+    }
 
 }
