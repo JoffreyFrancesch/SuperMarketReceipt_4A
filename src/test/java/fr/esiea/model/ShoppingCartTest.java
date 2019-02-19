@@ -4,6 +4,7 @@ import fr.esiea.model.market.catalog.SupermarketCatalog;
 import fr.esiea.model.market.product.Product;
 import fr.esiea.model.market.product.ProductUnit;
 import fr.esiea.model.offers.bundles.PercentBundle;
+import fr.esiea.model.offers.classics.FiveForAmount;
 import fr.esiea.model.offers.classics.Percent;
 import fr.esiea.model.offers.classics.ThreeForTwo;
 import fr.esiea.model.offers.classics.TwoForAmount;
@@ -97,7 +98,7 @@ public class ShoppingCartTest {
         ShoppingCart cart = new ShoppingCart();
 
         catalog.addProduct(wine, 10);
-        //teller.addSpecialOffer(new FiveForAmount(wine,35));
+        teller.addSpecialOffer(new FiveForAmount(wine,35));
         cart.addItemQuantity(wine,5);
 
         Receipt receipt = teller.checksOutArticlesFrom(cart);
@@ -123,12 +124,10 @@ public class ShoppingCartTest {
 
         teller.addSpecialOffer(new PercentBundle(products,50));
 
-
         cart.addItemQuantity(ketchup, 2);
         cart.addItemQuantity(mayo,1);
 
         Receipt receipt = teller.checksOutArticlesFrom(cart);
-        double current = receipt.getTotalPrice();
 
         Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(1.50);
     }
