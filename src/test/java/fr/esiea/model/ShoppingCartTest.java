@@ -3,6 +3,7 @@ package fr.esiea.model;
 import fr.esiea.model.market.catalog.SupermarketCatalog;
 import fr.esiea.model.market.product.Product;
 import fr.esiea.model.market.product.ProductUnit;
+import fr.esiea.model.offers.bundles.AmountBundle;
 import fr.esiea.model.offers.bundles.PercentBundle;
 import fr.esiea.model.offers.classics.FiveForAmount;
 import fr.esiea.model.offers.classics.Percent;
@@ -134,7 +135,30 @@ public class ShoppingCartTest {
 
     @Test
     public void AmountBundleRefactoring(){
-        //TODO NEED TO BE IMPLEMENTED
+        Product brown_beer = new Product("brown beer", ProductUnit.Each);
+        Product blond_beer = new Product("blond beer", ProductUnit.Each);
+
+
+        SupermarketCatalog catalog = new FakeCatalog();
+        Teller teller = new Teller(catalog);
+        ShoppingCart cart = new ShoppingCart();
+
+        catalog.addProduct(brown_beer, 10);
+        catalog.addProduct(blond_beer, 10);
+
+        Map<Product,Integer> products = new HashMap<Product,Integer>();
+        products.put(brown_beer,1);
+        products.put(blond_beer,1);
+
+        teller.addSpecialOffer(new AmountBundle(products,15));
+
+        cart.addItem(brown_beer);
+        cart.addItem(blond_beer);
+
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
+
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(15);
+
     }
 
 
