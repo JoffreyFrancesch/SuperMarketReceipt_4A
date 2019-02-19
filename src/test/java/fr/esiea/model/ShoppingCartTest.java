@@ -39,7 +39,7 @@ public class ShoppingCartTest {
     }
 
     @Test
-    public void ThreeForTwoRefactoring(){
+    public void ThreeForTwoRefactoringTest(){
         Product ketchup = new Product("ketchup", ProductUnit.Each);
 
         SupermarketCatalog catalog = new FakeCatalog();
@@ -70,7 +70,7 @@ public class ShoppingCartTest {
     }
 
     @Test
-    public void TenPercentRefactoring(){
+    public void TenPercentRefactoringTest(){
         Product apples = new Product("apples", ProductUnit.Kilo);
 
         SupermarketCatalog catalog = new FakeCatalog();
@@ -87,7 +87,7 @@ public class ShoppingCartTest {
     }
 
     @Test
-    public void TwoForAmountRefactoring(){
+    public void TwoForAmountRefactoringTest(){
         Product wine = new Product("wine", ProductUnit.Each);
 
         SupermarketCatalog catalog = new FakeCatalog();
@@ -110,7 +110,7 @@ public class ShoppingCartTest {
     }
 
     @Test
-    public void FiveForAmountRefactoring(){
+    public void FiveForAmountRefactoringTest(){
         Product wine = new Product("wine", ProductUnit.Each);
 
         SupermarketCatalog catalog = new FakeCatalog();
@@ -133,7 +133,7 @@ public class ShoppingCartTest {
     }
 
     @Test
-    public void PercentBundleRefactoring(){
+    public void PercentBundleRefactoringTest(){
         Product mayo = new Product("mayo", ProductUnit.Each);
         Product ketchup = new Product("ketchup", ProductUnit.Each);
 
@@ -159,7 +159,7 @@ public class ShoppingCartTest {
     }
 
     @Test
-    public void PercentBundleRefactoringV2(){
+    public void PercentBundleRefactoringV2Test(){
         Product mayo = new Product("mayo", ProductUnit.Each);
         Product ketchup = new Product("ketchup", ProductUnit.Each);
 
@@ -185,7 +185,7 @@ public class ShoppingCartTest {
     }
 
     @Test
-    public void AmountBundleRefactoring(){
+    public void AmountBundleRefactoringTest(){
         Product brown_beer = new Product("brown beer", ProductUnit.Each);
         Product blond_beer = new Product("blond beer", ProductUnit.Each);
 
@@ -211,7 +211,7 @@ public class ShoppingCartTest {
     }
 
     @Test
-    public void AmountBundleRefactoringV2(){
+    public void AmountBundleRefactoringV2Test(){
         Product brown_beer = new Product("brown beer", ProductUnit.Each);
         Product blond_beer = new Product("blond beer", ProductUnit.Each);
 
