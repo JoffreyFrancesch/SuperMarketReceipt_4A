@@ -37,7 +37,7 @@ public class AmountBundle extends AbstractBundle implements Offer {
 
             int numberOfXs =getNumberOfPacks(products,productQuantities);
 
-            BiFunction<Integer,Double, Double> offer_function = (X, Y) -> X * Y * numberOfXs;
+            BiFunction<Integer,Double, Double> offer_function = (X,Y) -> X * Y * numberOfXs;
 
             double discountTotal = getTotalDiscount(products,productQuantities,catalog,numberOfXs,offer_function);
 

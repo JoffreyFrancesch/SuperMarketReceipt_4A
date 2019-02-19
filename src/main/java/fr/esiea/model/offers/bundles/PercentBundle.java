@@ -45,7 +45,7 @@ public class PercentBundle extends AbstractBundle implements Offer {
         if(presentQuantities){
             int numberOfXs = getNumberOfPacks(products,items);
 
-            BiFunction<Integer,Double, Double> offerFunction = (X, Y) -> X * Y * numberOfXs * (100 - argument)/100;
+            BiFunction<Integer,Double, Double> offerFunction = (X,Y) -> X * Y * numberOfXs * (100 - argument)/100;
 
             double discountTotal = getTotalDiscount(products,items,catalog,numberOfXs,offerFunction);
 
