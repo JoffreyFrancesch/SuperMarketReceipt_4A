@@ -47,13 +47,26 @@ public class ShoppingCartTest {
         ShoppingCart cart = new ShoppingCart();
 
         catalog.addProduct(ketchup,3);
-        cart.addItemQuantity(ketchup,3);
 
-        teller.addSpecialOffer(new ThreeForTwo(ketchup,10));
+        cart.addItem(ketchup);
 
         Receipt receipt = teller.checksOutArticlesFrom(cart);
 
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(3);
+
+        cart.addItemQuantity(ketchup,2);
+
+        teller.addSpecialOffer(new ThreeForTwo(ketchup,10));
+
+        receipt = teller.checksOutArticlesFrom(cart);
+
         Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(6);
+
+        cart.addItem(ketchup);
+
+        receipt = teller .checksOutArticlesFrom(cart);
+
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(9);
     }
 
     @Test
@@ -88,6 +101,12 @@ public class ShoppingCartTest {
         Receipt receipt = teller.checksOutArticlesFrom(cart);
 
         Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(15);
+
+        cart.addItem(wine);
+        receipt = teller.checksOutArticlesFrom(cart);
+
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(25);
+
     }
 
     @Test
@@ -105,6 +124,12 @@ public class ShoppingCartTest {
         Receipt receipt = teller.checksOutArticlesFrom(cart);
 
         Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(35);
+
+        cart.addItem(wine);
+
+        receipt = teller.checksOutArticlesFrom(cart);
+
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(45);
     }
 
     @Test
