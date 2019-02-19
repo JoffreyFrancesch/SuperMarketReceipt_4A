@@ -118,13 +118,14 @@ public class ShoppingCartTest {
         catalog.addProduct(mayo, 1);
 
         Map<Product,Integer> products = new HashMap<Product,Integer>();
-        products.put(ketchup,2);products.put(mayo,1);
+        products.put(ketchup,2);
+        products.put(mayo,1);
 
         teller.addSpecialOffer(new PercentBundle(products,50));
 
 
-        cart.addItemQuantity(ketchup, 1);
-        cart.addItemQuantity(mayo,2);
+        cart.addItemQuantity(ketchup, 2);
+        cart.addItemQuantity(mayo,1);
 
         Receipt receipt = teller.checksOutArticlesFrom(cart);
         double current = receipt.getTotalPrice();
