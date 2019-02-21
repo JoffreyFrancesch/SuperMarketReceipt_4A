@@ -236,4 +236,29 @@ public class ShoppingCartTest {
         Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(20);
     }
 
+    @Test
+    public void handleOfferWithoutProduct(){
+        Product brown_beer = new Product("brown beer", ProductUnit.Each);
+        Product blond_beer = new Product("blond beer", ProductUnit.Each);
+
+        SupermarketCatalog catalog = new FakeCatalog();
+        Teller teller = new Teller(catalog);
+        ShoppingCart cart = new ShoppingCart();
+
+        catalog.addProduct(brown_beer, 10);
+        catalog.addProduct(blond_beer, 10);
+
+        Map<Product,Integer> products = new HashMap<Product,Integer>();
+        products.put(blond_beer,1);
+
+        teller.addSpecialOffer(new AmountBundle(products,15));
+
+        cart.addItem(brown_beer);
+        cart.addItem(blond_beer);
+
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
+
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(25);
+    }
+
 }
