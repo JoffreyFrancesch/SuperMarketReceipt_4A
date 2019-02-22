@@ -240,6 +240,7 @@ public class ShoppingCartTest {
     public void handleOfferWithoutProduct(){
         Product brown_beer = new Product("brown beer", ProductUnit.Each);
         Product blond_beer = new Product("blond beer", ProductUnit.Each);
+        Product white_beer = new Product("white beer", ProductUnit.Each);
 
         SupermarketCatalog catalog = new FakeCatalog();
         Teller teller = new Teller(catalog);
@@ -247,18 +248,20 @@ public class ShoppingCartTest {
 
         catalog.addProduct(brown_beer, 10);
         catalog.addProduct(blond_beer, 10);
+        catalog.addProduct(white_beer, 10);
 
         Map<Product,Integer> products = new HashMap<Product,Integer>();
         products.put(blond_beer,1);
+        products.put(brown_beer,1);
 
         teller.addSpecialOffer(new AmountBundle(products,15));
 
         cart.addItem(brown_beer);
-        cart.addItem(blond_beer);
+        cart.addItem(white_beer);
 
         Receipt receipt = teller.checksOutArticlesFrom(cart);
 
-        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(25);
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(20);
     }
 
 }

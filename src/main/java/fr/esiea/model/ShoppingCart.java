@@ -43,10 +43,11 @@ public class ShoppingCart {
 
         Map<Product,Double> products = productQuantities();
 
+        boucle:
         for (Map.Entry<Product[],Offer> offer : offers.entrySet()){
             for (Product p : offer.getKey()){
                 if(!products.containsKey(p)){
-                    continue;
+                    continue boucle;
                 }
             }
 
